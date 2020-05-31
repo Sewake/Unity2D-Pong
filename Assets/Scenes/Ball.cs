@@ -33,9 +33,11 @@ public class Ball : MonoBehaviour
 
         // Game over
         if (transform.position.x < GameManager.bottomLeft.x + radius && direction.x < 0) {
+            GameManager.instance.addScorePlayer("p2");
             StartCoroutine( Reset() );
         } 
         if (transform.position.x > GameManager.topRight.x - radius && direction.x > 0) {
+            GameManager.instance.addScorePlayer("p1");
             StartCoroutine( Reset() );
         }
     }

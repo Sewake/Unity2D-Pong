@@ -26,12 +26,14 @@ public class Paddle : MonoBehaviour
             pos = new Vector2(GameManager.topRight.x, 0);
             pos += Vector2.left * transform.localScale.x;
 
+            GetComponent<Renderer>().material.color = Color.blue;
             input = "PaddleRight";
         }
         else {
             pos = new Vector2(GameManager.bottomLeft.x, 0);
             pos += Vector2.right * transform.localScale.x;
 
+            GetComponent<Renderer>().material.color = Color.red;
             input = "PaddleLeft";
         }
 
