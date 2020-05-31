@@ -17,10 +17,14 @@ public class GameManager : MonoBehaviour
     public static string p1tag = "p1";
     public static string p2tag = "p2";
 
+    int scoreLimit = 3;
+
     public int score1 = 0;
     public int score2 = 0;
+
     public Text score1Text;
     public Text score2Text;
+    public Text winnerText;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +38,13 @@ public class GameManager : MonoBehaviour
         // Create ball
         Instantiate (ball);
 
+        scoreLimit = 3;
+
         // Create two paddles
         Paddle paddle1 = Instantiate (paddle) as Paddle;
         Paddle paddle2 = Instantiate (paddle) as Paddle;
+
+        winnerText.GetComponent<Text>().enabled = false;
 
         score1Text.GetComponent<Text>().color = Color.red;
         score2Text.GetComponent<Text>().color = Color.blue;
@@ -54,6 +62,20 @@ public class GameManager : MonoBehaviour
             score2 += 1;
             score2Text.text = score2.ToString();
         }
+
+        if (score1 >= scoreLimit | score2 >= scoreLimit) {
+            if (score1 >= scoreLimit) {
+                winnerText.text = "Player 1 wins !";
+                winnerText.GetComponent<Text>().color = Color.red;
+            }
+            else {
+                winnerText.text = "Player 2 wins !";
+                winnerText.GetComponent<Text>().color = Color.blue;
+            }
+
+            winnerText.GetComponent<Text>().enabled = true;
+            resetGame(); 
+        }
     }
 
     public void resetGame() {
@@ -61,8 +83,6 @@ public class GameManager : MonoBehaviour
         score1Text.text = score1.ToString();
         score2 = 0;
         score2Text.text = score2.ToString();
-
-        ball.Reset();
     }
 
     // Update is called once per frame
