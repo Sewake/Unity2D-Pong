@@ -46,11 +46,15 @@ public class GameManager : MonoBehaviour
 
         winnerText.GetComponent<Text>().enabled = false;
 
+        score1Text = score1Text.GetComponentInChildren<Text>();
+
         score1Text.GetComponent<Text>().color = Color.red;
         score2Text.GetComponent<Text>().color = Color.blue;
 
         paddle1.Init(false); // right paddle
-        paddle2.Init(true); // left paddle  
+        paddle2.Init(true); // left paddle
+
+        resetGame();
     }
 
     public void addScorePlayer(string player) {

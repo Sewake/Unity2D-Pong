@@ -168,12 +168,9 @@ MonoBehaviour:
   paddle: {fileID: 2080272022288663346, guid: 7613f86f0263bcd43b16ba54b67b3aa3, type: 3}
   score1: 0
   score2: 0
-  score1Text: {fileID: 997632604739557847, guid: c5951fae0eededb41af6bf6307caef58,
-    type: 3}
-  score2Text: {fileID: 227180929013135434, guid: 0e411f27293097e43bebd1e232f0577b,
-    type: 3}
-  winnerText: {fileID: 6538386911500585199, guid: b0c527c5dedcbc04d997082d11d8db80,
-    type: 3}
+  score1Text: {fileID: 0}
+  score2Text: {fileID: 0}
+  winnerText: {fileID: 0}
 --- !u!1 &252153905
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252153905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -449,6 +446,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1646162943}
     m_Modifications:
+    - target: {fileID: 227180929013135434, guid: 0e411f27293097e43bebd1e232f0577b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 227180929013135435, guid: 0e411f27293097e43bebd1e232f0577b,
         type: 3}
       propertyPath: m_LocalPosition.x
